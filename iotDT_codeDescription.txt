@@ -1,0 +1,29 @@
+1. meanshiftAlgorithm (2 matlab files)
+
+IoT 데이터의 패턴 추출을 위해 사용될 수 있는 meanshift 알고리즘 코드소스로 Euclidean과 Correlaiton 두개의 거리 측정 법을 활용할 수 있도록 알고리즘이 수정되었음
+
+(실행 시 날짜와 사용자별로 정렬된 time series raw data를 필요로 함)
+
+
+
+2. tagGeneration (1 matlab file)
+
+meanshift 알고리즘 외 다양한 기법을 적용하여 IoT 데이터에서 태그를 자동적으로 생성해주는 소스코드로 meanshift 적용 후 결과값을 입력으로 받아 pattern, missing, statistics, peak, estimation과 같은 태그를 생성함
+
+(실행 시 meanshiftAlgorithm 소스코드의 결과 값으로 출력된 값들과 raw data를 필요로 함)
+
+
+
+3. tagVisualization (3 matlab files)
+
+생성된 IoT DT의 시각화 소스코드로 iot기기에서 수집된 전력 사용 데이터를 분석 후 생성된 IoT DT를 예로 보여주고 있음
+
+(실행 시 meanshiftAlgorithm과 tagGeneration에 입력된 raw data와 결과로 출력된 tag data .mat 형태의 파일을 필요로 함)
+
+
+
+4. predictionTagGeneration (1 python file)
+
+IoT pattern tag 형태로의 예측을 실행하는 소스코드로 주어진 pattern tag 시퀀스 데이터로 lstm 학습을 진행하고 예측을 실행하여 pattern tag의 시퀀스로 예측 값을 출력함
+
+(실행 시 tagGeneration에서 결과로 출력되는 pattern tag의 값을 텍스트 파일 형태로 나타내는 파일을 필요로 함)
